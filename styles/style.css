@@ -9,8 +9,124 @@
     font-family: 'Roboto';
 }
 .container{
-    max-width: 1100px;
+    max-width: 1200px;
     width: 100%;
     margin: 0 auto;
     padding: 0 15px;
+}
+.header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100%;
+}
+.navigate{
+    background: #fff;
+}
+.header__nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+.logo{
+    display: block;
+}
+.logo > img{
+    width: 100%;
+}
+.header__list{
+    display: flex;
+    align-items: center;
+    gap: 36px;
+}
+.header__link{
+    display: block;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 700;
+    color: #151437;
+    transition: 200ms linear;
+}
+.header__link:hover{
+    color: #2981d2;
+}
+.header__link-se{
+    display: block;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 500;
+    color: #fff;
+    background: #6C9BCF;
+    padding: 10px 25px;
+    border-radius: 30px;
+    text-transform: uppercase;
+}
+#check{
+    display: none;
+}
+#check:checked ~ .btn .bars{
+    background: transparent;
+}
+#check:checked ~ .btn .bars::before{
+    transform: rotate(-45deg);
+    top: 0;
+}
+#check:checked ~ .btn .bars::after{
+    transform: rotate(45deg);
+    top: 0;
+}
+.btn{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+}
+.bars{
+    width: 30px;
+    height: 1px;
+    background: #000;
+    position: relative;
+}
+.bars::before, .bars::after{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 30px;
+    height: 1px;
+    top: -7px;
+    background: #000;
+    transition: 0.1s;
+}
+.bars::after{
+    top: 7px;
+}
+@media(max-width: 1105px) {
+    .btn{
+        display: flex;
+    }
+    .navigate{
+        padding: 0 8px;
+    }
+    .header__list{
+        position: fixed;
+        width: 200px;
+        height: 100%;
+        right: -200px;
+        top: 95px;
+        flex-direction: column;
+        background: #fff;
+        padding: 0 25px;
+        padding-top: 50px;
+        box-shadow: 0 10px 10px #00000094;
+        transition: 0.3s;
+    }
+    #check:checked ~ .header__list{
+        right: 0;
+    }
+    .header__link-se{
+        font-size: 14px;
+        text-align: center;
+    }
 }

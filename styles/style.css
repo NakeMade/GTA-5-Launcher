@@ -128,6 +128,7 @@ body{
     text-align: center;
     height: 750px;
     background: url(../images/header\ background.jpg) no-repeat center/cover;
+    margin-bottom: 50px;
 }
 .intro__text{
     max-width: 600px;
@@ -215,6 +216,65 @@ body{
 }
 .intro__buy:hover{
     color: #3b3d40;
+}
+.plus .title{
+    position: relative;
+}
+.plus .title::before{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 180%;
+    left: -40%;
+    height: 2px;
+    border-radius: 10px;
+    background: #eeeeee;
+    top: 70px;
+}
+.title{
+    color: #2981d2;
+    font-size: 32px;
+    line-height: 37px;
+    width: max-content;
+    margin: 0 auto;
+}
+.plus__cards{
+    display: grid;
+    grid-template-columns: repeat(4, minmax(220px, 230px));
+    gap: 80px;
+    margin: 90px 0 60px;
+}
+.plus__item img{
+    width: 120px;
+    height: 120px;
+}
+.plus__item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.plus__title{
+    font-size: 24px;
+    line-height: 32px;
+    color: #1479d2;
+    margin: 15px     0 15px;
+}
+.plus__descr{
+    color: #3b3d40;
+    font-size: 16px;
+    line-height: 26px;
+}
+@media(max-width: 1160px) {
+    .plus__cards{
+        grid-template-columns: repeat(2, minmax(220px, 230px));
+        justify-content: center;
+    }
+}
+@media(max-width: 540px){
+    .plus__cards{
+        grid-template-columns: repeat(1, minmax(200px, 230px));
+    }
 }
 @media(max-width: 440px) {
     .intro__buy > img{
